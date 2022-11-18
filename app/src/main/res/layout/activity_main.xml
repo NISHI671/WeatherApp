@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/mainContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible">
+        <Spinner
+            android:id="@+id/spinner"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:minHeight="48dp"
+            app:layout_constraintEnd_toStartOf="@+id/bSearch"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="SpeakableTextPresentCheck"
+            android:drawSelectorOnTop="true"
+            android:entries="@array/city"
+            />
+
+        <Button
+            android:id="@+id/bSearch"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="8dp"
+            android:drawable="@android:drawable/ic_menu_mylocation"
+            android:padding="8dp"
+            android:text="@string/location"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginEnd="8dp" />
+
+
+        <TextView
+            android:id="@+id/Lattitute"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="8dp"
+            android:text="@string/latitude"
+            android:textColor="@android:color/black"
+            android:textSize="20sp"
+            android:visibility="visible"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/spinner"
+            tools:visibility="visible" />
+        <TextView
+            android:id="@+id/Lattitute_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="30dp"
+            android:text="@string/sampleLatitude"
+            android:textColor="@android:color/black"
+            android:textSize="20sp"
+            android:visibility="visible"
+            app:layout_constraintStart_toEndOf="@id/Lattitute"
+            app:layout_constraintTop_toBottomOf="@id/spinner"
+            tools:visibility="visible" />
+        <TextView
+            android:id="@+id/Longitude"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="30dp"
+            android:text="@string/longitude"
+            android:textColor="@android:color/black"
+            android:textSize="20sp"
+            android:visibility="visible"
+            app:layout_constraintStart_toEndOf="@id/Lattitute_value"
+            app:layout_constraintTop_toBottomOf="@id/spinner"
+            tools:visibility="visible" />
+        <TextView
+            android:id="@+id/Longitude_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="30dp"
+            android:text="@string/sampleLongitude"
+            android:textColor="@android:color/black"
+            android:textSize="20sp"
+            android:visibility="visible"
+            app:layout_constraintStart_toEndOf="@id/Longitude"
+            app:layout_constraintTop_toBottomOf="@id/spinner"
+            tools:visibility="visible" />
+        <TextView
+            android:id="@+id/Location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="8dp"
+            android:text="@string/current_location"
+            android:textColor="@android:color/black"
+            android:textSize="20sp"
+            android:visibility="visible"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/Lattitute"
+            tools:visibility="visible" />
+
+        <Button
+            android:id="@+id/View_Weather"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="8dp"
+            android:background="#B38A8A"
+            android:padding="8dp"
+            android:text="@string/view_weather"
+            android:textSize="24sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/Location" />
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="16dp"
+            android:text="18 November 2022"
+            android:textColor="@android:color/black"
+            android:textSize="20sp"
+            android:visibility="visible"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/View_Weather"
+            tools:visibility="visible" />
+        <TextView
+            android:id="@+id/time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
+            android:text=" "
+            android:textColor="@android:color/black"
+            android:textSize="20sp"
+            android:visibility="visible"
+            app:layout_constraintStart_toEndOf="@id/date"
+            app:layout_constraintTop_toBottomOf="@id/View_Weather"
+            tools:visibility="visible" />
+
+        <TextView
+            android:id="@+id/tem_cel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="33"
+            android:textColor="@android:color/black"
+            android:textSize="30sp"
+            android:visibility="visible"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/time"
+            tools:visibility="visible" />
+
+        <TextView
+            android:id="@+id/tem_far"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="44dp"
+            android:text="33"
+            android:textColor="@android:color/black"
+            android:textSize="30sp"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/date"
+            tools:visibility="visible" />
+
+        <TextView
+            android:id="@+id/humidity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="24dp"
+            android:text="@string/label_humidity"
+            android:textColor="@android:color/black"
+            android:textSize="20sp"
+            android:visibility="visible"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tem_cel"
+            tools:visibility="visible" />
+
+        <TextView
+            android:id="@+id/humidity_val"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="252dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/label_humidity"
+            android:textColor="@android:color/black"
+            android:textSize="20sp"
+            android:visibility="visible"
+            app:layout_constraintStart_toEndOf="@id/humidity"
+            app:layout_constraintTop_toBottomOf="@id/tem_far"
+            tools:visibility="visible" />
+
+        <TextView
+            android:id="@+id/pressure"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="24dp"
+            android:text="@string/label_pressure"
+            android:textColor="@android:color/black"
+            android:textSize="20sp"
+            android:visibility="visible"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/humidity"
+            tools:visibility="visible" />
+
+        <TextView
+            android:id="@+id/pressure_val"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="244dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/label_pressure"
+            android:textColor="@android:color/black"
+            android:textSize="20sp"
+            android:visibility="visible"
+            app:layout_constraintStart_toEndOf="@id/pressure"
+            app:layout_constraintTop_toBottomOf="@id/humidity_val"
+            tools:visibility="visible" />
+
+        <TextView
+            android:id="@+id/eyerange"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="24dp"
+            android:text="@string/label_visibility"
+            android:textColor="@android:color/black"
+            android:textSize="20sp"
+            android:visibility="visible"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/pressure"
+            tools:visibility="visible" />
+
+        <TextView
+            android:id="@+id/eyerange_val"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="240dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/label_visibility"
+            android:textColor="@android:color/black"
+            android:textSize="20sp"
+            android:visibility="visible"
+            app:layout_constraintStart_toEndOf="@id/eyerange"
+            app:layout_constraintTop_toBottomOf="@id/pressure_val"
+            tools:visibility="visible" />
+
+        <TextView
+            android:id="@+id/state"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="24dp"
+            android:text="@string/description_weather_condition_icon"
+            android:textColor="@android:color/black"
+            android:textSize="30sp"
+            android:visibility="visible"
+            android:textAlignment="center"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/eyerange"
+            tools:visibility="visible" />
+
+        <TextView
+            android:id="@+id/sunrise"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/label_sunrise"
+            android:textColor="@android:color/black"
+            android:textSize="20sp"
+            android:visibility="visible"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/state"
+            tools:visibility="visible" />
+
+        <TextView
+            android:id="@+id/sunset"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="12dp"
+            android:text="@string/label_sunset"
+            android:textColor="@android:color/black"
+            android:textSize="20sp"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/state"
+            tools:visibility="visible" />
+
+        <ImageView
+            android:id="@+id/iv_sunrise"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginStart="28dp"
+            android:layout_marginBottom="20dp"
+            android:contentDescription="@string/label_sunrise"
+            android:src="@drawable/ic_sunrise"
+            app:layout_constraintBottom_toTopOf="@+id/tv_sunrise_time"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_sunrise_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="28dp"
+            android:layout_marginBottom="8dp"
+            android:text="@string/label_sunrise"
+            android:textColor="@android:color/black"
+            android:textSize="20sp"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:visibility="visible" />
+
+        <ImageView
+            android:id="@+id/iv_sunset"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginEnd="28dp"
+            android:layout_marginBottom="12dp"
+            android:contentDescription="@string/label_sunset"
+            android:src="@drawable/ic_sunset"
+            app:layout_constraintBottom_toTopOf="@+id/tv_sunset_time"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_sunset_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="28dp"
+            android:layout_marginBottom="8dp"
+            android:text="@string/label_sunset"
+            android:textColor="@android:color/black"
+            android:textSize="20sp"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/iv_sunset"
+            tools:visibility="visible" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <ProgressBar
+        android:id="@+id/loader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+    <TextView
+        android:id="@+id/errorText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="Something went wrong"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
